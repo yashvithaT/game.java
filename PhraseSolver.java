@@ -18,8 +18,6 @@ public class PhraseSolver
         player1 = new Player(name1);
         player2 = new Player(name2);
     }
-
-    /* simple game loop */
     public void play() {
         boolean solved = false;
         int currentPlayer = 1;
