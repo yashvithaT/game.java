@@ -25,26 +25,27 @@ public class PhraseSolver
         int currentPlayer = 1;
         Scanner input = new Scanner(System.in);
 
+        board.setLetterValue();
+
         while (!solved) {
             System.out.println("\nCurrent phrase: " + board.getSolvedPhrase());
-            board.setLetterValue();
             System.out.println("Current letter value: " + board.getCurrentLetterValue());
 
             Player player = (currentPlayer == 1) ? player1 : player2;
             System.out.println(player.getName() + "'s turn. Enter a letter or guess the phrase:");
             String guess = input.nextLine().toUpperCase();
 
-            if (guess.length() == 1) { // single letter
+            if (guess.length() == 1) {
                 if (board.guessLetter(guess)) {
                     System.out.println("Correct!");
                     player.addScore(board.getCurrentLetterValue());
                 } else {
                     System.out.println("Wrong!");
                 }
-            } else { // attempt to solve
+            } else { 
                 if (board.isSolved(guess)) {
                     System.out.println("Correct!");
-                    player.addScore(1000); // bonus for solving
+                    player.addScore(1000); 
                     solved = true;
                 } else {
                     System.out.println("Incorrect phrase.");
@@ -54,7 +55,7 @@ public class PhraseSolver
             System.out.println(player1.getName() + " score: " + player1.getScore());
             System.out.println(player2.getName() + " score: " + player2.getScore());
 
-            // switch player
+    
             currentPlayer = (currentPlayer == 1) ? 2 : 1;
         }
 
