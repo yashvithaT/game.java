@@ -12,7 +12,7 @@ public class Player
     /* constructor */
     public Player(String playerName) {
         name = playerName;
-        score = 0; // start at 0
+        score = 0; 
     }
 
     /* accessors */
@@ -30,10 +30,10 @@ public class Player
     }
 
     public void addScore(int points) {
-        score += points; // increase score by points
+        score += points; 
     }
 
     public void resetScore() {
-        score = 0; // reset score to 0
+        score = 0; 
     }
 }
