@@ -31,7 +31,7 @@ public class PhraseSolver
 
             Player player = (currentPlayer == 1) ? player1 : player2;
             System.out.println(player.getName() + "'s turn. Enter a letter or guess the phrase:");
-            String guess = input.nextLine().toUpperCase();
+            String guess = input.nextLine().toLowerCase();
 
             if (guess.length() == 1) {
                 if (board.guessLetter(guess)) {
